@@ -63,7 +63,8 @@ Partial Class Form1
         '
         'p1
         '
-        Me.p1.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Chelsea
+        Me.p1.BackColor = System.Drawing.Color.White
+        Me.p1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.p1.Location = New System.Drawing.Point(129, 94)
         Me.p1.Name = "p1"
         Me.p1.Size = New System.Drawing.Size(128, 128)
@@ -72,7 +73,7 @@ Partial Class Form1
         '
         'p2
         '
-        Me.p2.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.ManU
+        Me.p2.BackColor = System.Drawing.Color.White
         Me.p2.Location = New System.Drawing.Point(263, 94)
         Me.p2.Name = "p2"
         Me.p2.Size = New System.Drawing.Size(128, 128)
@@ -81,7 +82,7 @@ Partial Class Form1
         '
         'p3
         '
-        Me.p3.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Chelsea
+        Me.p3.BackColor = System.Drawing.Color.White
         Me.p3.Location = New System.Drawing.Point(397, 94)
         Me.p3.Name = "p3"
         Me.p3.Size = New System.Drawing.Size(128, 128)
@@ -90,7 +91,7 @@ Partial Class Form1
         '
         'p4
         '
-        Me.p4.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Spurs
+        Me.p4.BackColor = System.Drawing.Color.White
         Me.p4.Location = New System.Drawing.Point(531, 94)
         Me.p4.Name = "p4"
         Me.p4.Size = New System.Drawing.Size(128, 128)
@@ -99,7 +100,7 @@ Partial Class Form1
         '
         'p5
         '
-        Me.p5.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.ManCity
+        Me.p5.BackColor = System.Drawing.Color.White
         Me.p5.Location = New System.Drawing.Point(129, 228)
         Me.p5.Name = "p5"
         Me.p5.Size = New System.Drawing.Size(128, 128)
@@ -108,7 +109,7 @@ Partial Class Form1
         '
         'p6
         '
-        Me.p6.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Liverpool
+        Me.p6.BackColor = System.Drawing.Color.White
         Me.p6.Location = New System.Drawing.Point(263, 228)
         Me.p6.Name = "p6"
         Me.p6.Size = New System.Drawing.Size(128, 128)
@@ -117,7 +118,7 @@ Partial Class Form1
         '
         'p7
         '
-        Me.p7.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Wolves
+        Me.p7.BackColor = System.Drawing.Color.White
         Me.p7.Location = New System.Drawing.Point(397, 228)
         Me.p7.Name = "p7"
         Me.p7.Size = New System.Drawing.Size(128, 128)
@@ -126,7 +127,7 @@ Partial Class Form1
         '
         'p8
         '
-        Me.p8.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Wolves
+        Me.p8.BackColor = System.Drawing.Color.White
         Me.p8.Location = New System.Drawing.Point(531, 228)
         Me.p8.Name = "p8"
         Me.p8.Size = New System.Drawing.Size(128, 128)
@@ -135,7 +136,7 @@ Partial Class Form1
         '
         'p9
         '
-        Me.p9.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.ManU
+        Me.p9.BackColor = System.Drawing.Color.White
         Me.p9.Location = New System.Drawing.Point(129, 362)
         Me.p9.Name = "p9"
         Me.p9.Size = New System.Drawing.Size(128, 128)
@@ -144,7 +145,7 @@ Partial Class Form1
         '
         'p10
         '
-        Me.p10.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Spurs
+        Me.p10.BackColor = System.Drawing.Color.White
         Me.p10.Location = New System.Drawing.Point(263, 362)
         Me.p10.Name = "p10"
         Me.p10.Size = New System.Drawing.Size(128, 128)
@@ -153,7 +154,7 @@ Partial Class Form1
         '
         'p11
         '
-        Me.p11.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.Liverpool
+        Me.p11.BackColor = System.Drawing.Color.White
         Me.p11.Location = New System.Drawing.Point(397, 362)
         Me.p11.Name = "p11"
         Me.p11.Size = New System.Drawing.Size(128, 128)
@@ -162,7 +163,7 @@ Partial Class Form1
         '
         'p12
         '
-        Me.p12.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.ManCity
+        Me.p12.BackColor = System.Drawing.Color.White
         Me.p12.Location = New System.Drawing.Point(531, 362)
         Me.p12.Name = "p12"
         Me.p12.Size = New System.Drawing.Size(128, 128)
