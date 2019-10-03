@@ -1,14 +1,39 @@
 ﻿Public Class Form1
-    Dim Matriz(12) As Integer
+    Dim Jogadas(15) As Integer
+    Dim Matriz(15) As Integer
     Dim Quadros() As PictureBox
-    Private Sub Inicializa()
+    Dim Anterior, Passo As Integer
+    Sub imagens(quadro)
+        Dim fig As New PictureBox
+        Select Case Matriz(quadro)
+            Case 0 : fig.BackgroundImage = My.Resources.Spurs
+            Case 1 : fig.BackgroundImage = My.Resources.Chelsea
+            Case 2 : fig.BackgroundImage = My.Resources.Liverpool
+            Case 3 : fig.BackgroundImage = My.Resources.Wolves
+            Case 4 : fig.BackgroundImage = My.Resources.ManCity
+            Case 5 : fig.BackgroundImage = My.Resources.ManU
+        End Select
+        Quadros(quadro).BackgroundImage = fig.BackgroundImage
+        Refresh()
+        Threading.Thread.Sleep(500)
+        Jogadas(quadro) = 1
+        If Passo = 1 Then : Anterior = quadro
+        ElseIf Matriz(quadro) <> Matriz(Anterior) Then
+            Jogadas(quadro) = 0
+            Jogadas(Anterior) = 0
+            Quadros(quadro).BackgroundImage = My.Resources.vazio
+            Quadros(Anterior).BackgroundImage = My.Resources.vazio
+        End If
+    End Sub
+
+    Sub inicializa()
         Dim i As Integer
         For i = 0 To 11
-            Matriz(i) = 0
             Quadros(i).BackgroundImage = My.Resources.vazio
+            Matriz(i) = 0
+            Jogadas(i) = 0
         Next
-
-        For par = 0 To 5
+        For par = 0 To 7
             For x = 0 To 1
                 Do : i = Int(Rnd() * 12)
                 Loop While Matriz(i) > 0
@@ -16,62 +41,50 @@
             Next
         Next
 
-
+        Passo = 1
     End Sub
-    Private Sub Imagem(quadro)
-        Dim fig As New PictureBox
-        Select Case Matriz(quadro)
-            Case 0 : fig.BackgroundImage = My.Resources.Chelsea
-            Case 1 : fig.BackgroundImage = My.Resources.Liverpool
-            Case 2 : fig.BackgroundImage = My.Resources.ManCity
-            Case 3 : fig.BackgroundImage = My.Resources.ManU
-            Case 4 : fig.BackgroundImage = My.Resources.Wolves
-            Case 5 : fig.BackgroundImage = My.Resources.Spurs
-        End Select
-
-        Quadros(quadro).BackgroundImage = fig.BackgroundImage
-    End Sub
-    Private Sub Clicar(sender As Object, e As EventArgs) Handles p1.Click, p2.Click, p4.Click, p3.Click, p9.Click, p8.Click, p7.Click, p6.Click, p5.Click, p12.Click, p11.Click, p10.Click
+    Private Sub clicar(sender As Object, e As EventArgs) Handles p1.Click, p9.Click, p8.Click, p7.Click, p6.Click, p5.Click, p4.Click, p3.Click, p2.Click, p12.Click, p11.Click, p10.Click
+        Dim quadro As Integer
         Select Case sender.name
-            Case "P1" : Imagem(0)
-            Case "P2" : Imagem(1)
-            Case "P3" : Imagem(2)
-            Case "P4" : Imagem(3)
-            Case "P5" : Imagem(4)
-            Case "P6" : Imagem(5)
-            Case "P7" : Imagem(6)
-            Case "P8" : Imagem(7)
-            Case "P9" : Imagem(8)
-            Case "P10" : Imagem(9)
-            Case "P11" : Imagem(10)
-            Case "P12" : Imagem(11)
+            Case "P1" : quadro = 0
+            Case "P2" : quadro = 1
+            Case "P3" : quadro = 2
+            Case "P4" : quadro = 3
+            Case "P5" : quadro = 4
+            Case "P6" : quadro = 5
+            Case "P7" : quadro = 6
+            Case "P8" : quadro = 7
+            Case "P9" : quadro = 8
+            Case "P10" : quadro = 9
+            Case "P11" : quadro = 10
+            Case "P12" : quadro = 11
         End Select
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim fig As New PictureBox
-        Dim resposta = MsgBox("Tem a Certeza", vbYesNo, "Novo Jogo")
-        If resposta = vbNo Then Return
-        p1.BackgroundImage = My.Resources.vazio
-        p2.BackgroundImage = My.Resources.vazio
-        p3.BackgroundImage = My.Resources.vazio
-        p4.BackgroundImage = My.Resources.vazio
-        p5.BackgroundImage = My.Resources.vazio
-        p6.BackgroundImage = My.Resources.vazio
-        p7.BackgroundImage = My.Resources.vazio
-        p8.BackgroundImage = My.Resources.vazio
-        p9.BackgroundImage = My.Resources.vazio
-        p10.BackgroundImage = My.Resources.vazio
-        p11.BackgroundImage = My.Resources.vazio
-        p12.BackgroundImage = My.Resources.vazio
+        If Jogadas(quadro) <> 0 Then Return
+        Call imagens(quadro)
+        If Passo = 1 Then : Passo = 2
+        Else : Passo = 1
+        End If
+        Dim ganhou = True
+        For i = 0 To 15
+            If Jogadas(i) = 0 Then ganhou = False
+        Next
+        If ganhou Then
+            Beep()
+            MsgBox("You won! Anime Memories!",, "Fim de Jogo")
+            inicializa()
+        End If
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Randomize()
         Quadros = {p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12}
-        Call Inicializa()
+        Call inicializa()
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        Application.Exit()
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Beep()
+        Dim resposta = MsgBox("Tem a certeza?", vbYesNo, "Novo Jogo")
+        If resposta = vbNo Then Return
+        inicializa()
     End Sub
 End Class

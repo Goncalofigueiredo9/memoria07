@@ -35,6 +35,7 @@ Partial Class Form1
         Me.p10 = New System.Windows.Forms.PictureBox()
         Me.p11 = New System.Windows.Forms.PictureBox()
         Me.p12 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.p1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.p3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,12 +171,22 @@ Partial Class Form1
         Me.p12.TabIndex = 12
         Me.p12.TabStop = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(356, 509)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(85, 29)
+        Me.Button1.TabIndex = 13
+        Me.Button1.Text = "Novo Jogo"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.Jogo_Da_Memoria_7.My.Resources.Resources.sam2
         Me.ClientSize = New System.Drawing.Size(836, 560)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.p12)
         Me.Controls.Add(Me.p11)
         Me.Controls.Add(Me.p10)
@@ -221,4 +232,5 @@ Partial Class Form1
     Friend WithEvents p10 As PictureBox
     Friend WithEvents p11 As PictureBox
     Friend WithEvents p12 As PictureBox
+    Friend WithEvents Button1 As Button
 End Class
