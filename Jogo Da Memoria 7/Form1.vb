@@ -1,6 +1,6 @@
 ﻿Public Class Form1
-    Dim Jogadas(15) As Integer
-    Dim Matriz(15) As Integer
+    Dim Jogadas(12) As Integer
+    Dim Matriz(12) As Integer
     Dim Quadros() As PictureBox
     Dim Anterior, Passo As Integer
     Sub imagens(quadro)
@@ -33,7 +33,7 @@
             Matriz(i) = 0
             Jogadas(i) = 0
         Next
-        For par = 0 To 7
+        For par = 0 To 11
             For x = 0 To 1
                 Do : i = Int(Rnd() * 12)
                 Loop While Matriz(i) > 0
