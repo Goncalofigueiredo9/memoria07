@@ -33,7 +33,7 @@
             Matriz(i) = 0
             Jogadas(i) = 0
         Next
-        For par = 0 To 11
+        For par = 0 To 5
             For x = 0 To 1
                 Do : i = Int(Rnd() * 12)
                 Loop While Matriz(i) > 0
@@ -65,7 +65,7 @@
         Else : Passo = 1
         End If
         Dim ganhou = True
-        For i = 0 To 15
+        For i = 0 To 12
             If Jogadas(i) = 0 Then ganhou = False
         Next
         If ganhou Then
