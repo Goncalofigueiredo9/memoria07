@@ -6,12 +6,12 @@
     Sub imagens(quadro)
         Dim fig As New PictureBox
         Select Case Matriz(quadro)
-            Case 0 : fig.BackgroundImage = My.Resources.Spurs
-            Case 1 : fig.BackgroundImage = My.Resources.Chelsea
-            Case 2 : fig.BackgroundImage = My.Resources.Liverpool
-            Case 3 : fig.BackgroundImage = My.Resources.Wolves
-            Case 4 : fig.BackgroundImage = My.Resources.ManCity
-            Case 5 : fig.BackgroundImage = My.Resources.ManU
+            Case 0 : fig.BackgroundImage = My.Resources.Chelsea
+            Case 1 : fig.BackgroundImage = My.Resources.Liverpool
+            Case 2 : fig.BackgroundImage = My.Resources.ManCity
+            Case 3 : fig.BackgroundImage = My.Resources.ManU
+            Case 4 : fig.BackgroundImage = My.Resources.Spurs
+            Case 5 : fig.BackgroundImage = My.Resources.Wolves
         End Select
         Quadros(quadro).BackgroundImage = fig.BackgroundImage
         Refresh()
@@ -40,24 +40,23 @@
                 Matriz(i) = par
             Next
         Next
-
         Passo = 1
     End Sub
-    Private Sub clicar(sender As Object, e As EventArgs) Handles p1.Click, p9.Click, p8.Click, p7.Click, p6.Click, p5.Click, p4.Click, p3.Click, p2.Click, p12.Click, p11.Click, p10.Click
+    Private Sub Clica(sender As Object, e As EventArgs) Handles p1.Click, p9.Click, p8.Click, p7.Click, p6.Click, p5.Click, p4.Click, p3.Click, p2.Click, p12.Click, p11.Click, p10.Click
         Dim quadro As Integer
         Select Case sender.name
-            Case "P1" : quadro = 0
-            Case "P2" : quadro = 1
-            Case "P3" : quadro = 2
-            Case "P4" : quadro = 3
-            Case "P5" : quadro = 4
-            Case "P6" : quadro = 5
-            Case "P7" : quadro = 6
-            Case "P8" : quadro = 7
-            Case "P9" : quadro = 8
-            Case "P10" : quadro = 9
-            Case "P11" : quadro = 10
-            Case "P12" : quadro = 11
+            Case "p1" : quadro = 0
+            Case "p2" : quadro = 1
+            Case "p3" : quadro = 2
+            Case "p4" : quadro = 3
+            Case "p5" : quadro = 4
+            Case "p6" : quadro = 5
+            Case "p7" : quadro = 6
+            Case "p8" : quadro = 7
+            Case "p9" : quadro = 8
+            Case "p10" : quadro = 9
+            Case "p11" : quadro = 10
+            Case "p12" : quadro = 11
         End Select
         If Jogadas(quadro) <> 0 Then Return
         Call imagens(quadro)
@@ -70,7 +69,7 @@
         Next
         If ganhou Then
             Beep()
-            MsgBox("You won! Anime Memories!",, "Fim de Jogo")
+            MsgBox("You won! Anime Memories!", "Fim de Jogo")
             inicializa()
         End If
     End Sub
